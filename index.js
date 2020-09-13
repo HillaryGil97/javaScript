@@ -1,73 +1,61 @@
-console.log('Hola Mundo :D')
+var phrase = ' Hola a todos'
+console.log(phrase)
+// * Nos regresa un array [palabra,donde empieza,texto]
+findChacter = phrase.match(/Hola/)
+console.log('match',findChacter)
 
-/* Tipos de variables:
-    var
-    let     ->cambleCase :v
-    const -> puras mayusculas
+// * Extrae|corta una parte de la cadena y devuelve la parte extraida en una nueva cadena
+newPhrase = phrase.slice(7,12)
+console.log(newPhrase)
 
-*/
+//* Regresa los caracteres que se encuentran en ese rango, regresa una nueva cadena
+newPhrase = phrase.substring(0,4)
+console.log(newPhrase)
 
-var name = 'Dana' //var puede cambiar de valor sin conflicto
-let name2 = 'Edwin'//let no puede cambiar el valor en cualquier lado
-const NAME3 = 'Anahi'
-function sayHello(){
-    name = 'Hill'
-    name2 = 'Naomi'
-    console.log(name2)
-}
+//* Parametros (posición inicial, longitud)
+newPhrase = phrase.substr(0,5)
+console.log(newPhrase)
+console.log(newPhrase.length)
 
-console.log('nombre1',name)
-console.log('nombre2',name2)
+//* Nos dice si el texto empieza con este parametro. Retorna true|false
+let starWith = phrase.startsWith('h')
+console.log(starWith)
 
-sayHello()
+//* Nos dice si el texto termino con este parametro. Retorna true|false
+let endWith = phrase.endsWith('s')
+console.log(endWith)
 
+//* Para reemplazar una parte por otra de un string. Reemplaza el primer
+//*parametro por el segundo parametro, solo remplaza la primera palabra
+//* que encuentra, regresa una nueva cadena, "g" es una cadena.
+newPhrase = phrase.replace(/o/g,'e')
+console.log(newPhrase)
+//*Quita los espacios en blanco al inicio y al final en blanco.
+newPhrase = phrase.trim()
+console.log(newPhrase)
 
-/*
-    Metodos de String
+//* Nos retorna el caracter que se encuentra en la posición que le pasamos
+let CharacterNumber = phrase.charAt(4)
+console.log(CharacterNumber)
 
-*/
+positionCharacter = phrase[6]
+console.log(positionCharacter)
 
+//* Devuelve el unicode (codigo ASCII) del caracter
+positionCharacter = phrase.charCodeAt(8)
+console.log(positionCharacter) 
 
- //toUperCase
- var phrase = 'Hola a todos'
- let phraseUpper = phrase.toUpperCase()
-console.log(phraseUpper)
+//* Devuelve el caracter del unicode que pongas como parametro
+let character = String.fromCharCode(69)
+console.log(character)
 
-//toLowerCase
-let phraseLower = phraseUpper.toLocaleLowerCase()
-console.log(phraseLower)
+//*Separa un string en un array tomando como tope la letra del parametro
+let newArray = phrase.split('o')
+console.log(newArray)
 
-//Contar caracteres
-let characterNumber = phraseLower.length
-console.log(characterNumber)
+//* busca si existe una palabra, retorna true|false
+let hasCharacter = phrase.includes('Hola')
+console.log(hasCharacter)
 
-//concatenar un string con un var +
-let stringConcat = phraseLower.concat(', tengo ',characterNumber, ' caracteres')
-console.log(stringConcat)
-
-//busqueda en un string
-
-//indexOf([carcter que se va a buscar],[a partir de que indice*])
-//siempre empieza en 0 y si no encuentra nada regresa -1
-
-let findCharacter = phrase.indexOf('a')
-console.log(findCharacter)
-
-findCharacter = phrase.search('a') //aqui se puede buscar una expresión regular
-console.log(findCharacter)
-
-//algoritmo de naomi
-findCharacter = phrase.lastIndexOf('a')
-console.log(findCharacter)
-
-var cadena = 'aaadbbbc'
-console.log(cadena)
-
-for (let i=0; i<cadena.length; i++){
-    if(cadena.indexOf(cadena[i])==cadena.lastIndexOf(cadena[i])){
-        console.log(cadena[i])
-        break
-    }
-}
-
-//metodos array :D 
+//*Se repite las veces que le pidas
+console.log(phrase.repeat(20))
