@@ -59,3 +59,12 @@ console.log(hasCharacter)
 
 //*Se repite las veces que le pidas
 console.log(phrase.repeat(20))
+
+/*
+input: Hola mundo
+output::odnum aloH
+
+input:Saludar a todos
+output:sodotar a dulas
+
+*/
