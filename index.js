@@ -1,73 +1,94 @@
-console.log('Hola Mundo :D')
+let numero = 2
 
-/* Tipos de variables:
-    var
-    let     ->cambleCase :v
-    const -> puras mayusculas
+console.log(typeof(numero),numero+2)//sirve para obtener el tipo de una variable
+numero = numero.toString()//sirve para pasar una variable a tipo String ;)
 
-*/
+console.log(typeof(numero),numero+2)
 
-var name = 'Dana' //var puede cambiar de valor sin conflicto
-let name2 = 'Edwin'//let no puede cambiar el valor en cualquier lado
-const NAME3 = 'Anahi'
-function sayHello(){
-    name = 'Hill'
-    name2 = 'Naomi'
-    console.log(name2)
-}
+//PEQUEÑO PARENTESIS DE ***************Concatenación**************
+let phrase = 'Hola'
+let name = 'Hill'
+let age = 23
 
-console.log('nombre1',name)
-console.log('nombre2',name2)
+let greetPerson = phrase+' '+name
 
-sayHello()
+console.log(greetPerson)
+console.log(phrase+' soy '+name+' y tengo '+age+' años.')
 
+//template literal
+console.log(`${phrase} soy ${name} y tengo ${age} años.`)
 
-/*
-    Metodos de String
+//fin del pequeño parentesis
 
-*/
+//ARRAY
 
+/*Array conjunto de datos, su posición empieza en 0 a n, si
+declaramos un array como const podemos modifiar sus elementos 
+unicamente con su id o push, pero no reemplazarlo para eso tendría
+ya ser val o let*/
 
- //toUperCase
- var phrase = 'Hola a todos'
- let phraseUpper = phrase.toUpperCase()
-console.log(phraseUpper)
+/*const array = ['string',1,{},[1,2,3]]
+console.log(array[3])
+array[0] = 'hola'
+console.log(array[3])*/
 
-//toLowerCase
-let phraseLower = phraseUpper.toLocaleLowerCase()
-console.log(phraseLower)
+//concat -> sirve para concatenar
+let array = ['Hola',24,17,32,54,25,3,6]
+let array2 = ['Adios']
+let newAr = array.concat(array2)
+console.log(array)
+console.log(newAr)
 
-//Contar caracteres
-let characterNumber = phraseLower.length
-console.log(characterNumber)
+//every -> verifica si todos los item pasan por una prueba
+//regresa true si todos los items pasan||false si alguno 
+//de los elementos falla
 
-//concatenar un string con un var +
-let stringConcat = phraseLower.concat(', tengo ',characterNumber, ' caracteres')
-console.log(stringConcat)
+let is = array.every(function(age){
+    return age >= 18
+})
+console.log(is)
 
-//busqueda en un string
+//fill -> llena los items especificados con un
+//valor estatico MODIFICA el array
 
-//indexOf([carcter que se va a buscar],[a partir de que indice*])
-//siempre empieza en 0 y si no encuentra nada regresa -1
+array.fill('hi',1,3)
+console.log(array)
 
-let findCharacter = phrase.indexOf('a')
-console.log(findCharacter)
+//find
+let numeroMayor = array.find((age)=> age>= 18)
+console.log(numeroMayor)
 
-findCharacter = phrase.search('a') //aqui se puede buscar una expresión regular
-console.log(findCharacter)
+//findIndex
+let position = array.findIndex((age)=> age>= 18)
+console.log('position: '+position)
 
-//algoritmo de naomi
-findCharacter = phrase.lastIndexOf('a')
-console.log(findCharacter)
+//indexOf
+let item =array.indexOf(20,3)
+console.log(item)
 
-var cadena = 'aaadbbbc'
-console.log(cadena)
+//join -> sirve para pasar un array a un string
+//es el contrario al split
 
-for (let i=0; i<cadena.length; i++){
-    if(cadena.indexOf(cadena[i])==cadena.lastIndexOf(cadena[i])){
-        console.log(cadena[i])
-        break
+//reverse -> 
+let numberArr = [1,2,3,4,5]
+console.log(numberArr.reverse())
+
+// *********************
+
+let phrase3 = 'Hola a todos'
+
+let aux = phrase3.replace(/ /g,'')
+console.log(aux)
+let newPhrase = aux.split('').reverse().join('')
+console.log(newPhrase)
+var final = ''
+for(let i=0, j=0; i<phrase3.length;i++){
+    if(phrase3[i] == ' '){
+        final = final + ' '
+    }else if(newPhrase[j] != undefined){
+        final = final + newPhrase[j]
+        j++
     }
 }
 
-//metodos array :D 
+console.log(final)
