@@ -1,25 +1,21 @@
-//++++++++++    FUNCIONES 
-function sayHello (greet = () => {console.log('Hello')}){
-    let hello = true
-    hello ? greet() : null
-}
+//sintaxis: array.forEach(callback(nameItem, index)){}
+//forEach no retorn nada 
 
-sayHello()
+let numbersArray = [1,2,3,4,5]
 
-function suma(num, num2){
-    return num + num2
-}
-console.log(suma(2,2))
+numbersArray.forEach((number,index)=> {
+    console.log(`${number * number} y mi index es ${index}`)
+})
 
-const sum1 = (num,num2) => num + num2
-console.log(sum1(3,3))
+let numbersArrayMap = numbersArray.map(number=>number*number)
+console.log(numbersArrayMap)
 
-const printValue = (value) => console.log(value)
-printValue('Hola a todos')
+let numbersArrayFilter = numbersArrayMap.filter(number => number >= 10)
+console.log(numbersArrayFilter)
 
-const printValue2 = (value) => {
-    value = value.toUpperCase()
-    console.log(value)
-}
-printValue2('Hola a todos morros 7u7')
+let numbersArrayReduce = numbersArray.reduce((acum,number,index) => acum = acum + number,0)
+console.log(numbersArrayReduce)
 
+//+++++++++++++++++++++++++++
+let promedio = numbersArrayMap.reduce((acum, number, index, arr) =>acum = acum + number / arr.length,0)
+console.log(promedio)
